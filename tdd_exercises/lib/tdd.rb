@@ -55,10 +55,8 @@ class Hanoi
   end
 
   def move(start, target)
-    debugger
     raise "MoveError" unless valid_move?(start, target)
     @towers[target] << @towers[start].pop
-    debugger
   end
 
   def won?
@@ -68,7 +66,6 @@ class Hanoi
 
   private
   def valid_move?(start, target)
-    debugger
     return false if towers[start].empty?
     return true if towers[target].empty?
     return false if towers[start].last > towers[target].last
